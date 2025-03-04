@@ -59,7 +59,7 @@ $routeResult = mysqli_query($conn, $routeSql);
                     <select class="form-select" id="route" name="route_id" required>
                         <option value="" disabled selected>Select a route</option>
                         <?php while ($route = mysqli_fetch_assoc($routeResult)): ?>
-                            <option value="<?php echo $route['route_id']; ?>" data-busno="<?php echo $route['bus_no']; ?>" data-deptime="<?php echo $route['route_dep_time']; ?>" data-cost="<?php echo $route['route_step_cost']; ?>">
+                            <option value="<?php echo $route['route_id']; ?>|<?php echo $route['route_cities']; ?>" data-busno="<?php echo $route['bus_no']; ?>" data-deptime="<?php echo $route['route_dep_time']; ?>" data-cost="<?php echo $route['route_step_cost']; ?>">
                                 <?php echo $route['route_cities']; ?>
                             </option>
                         <?php endwhile; ?>
@@ -102,7 +102,7 @@ $routeResult = mysqli_query($conn, $routeSql);
             const stepCost = this.options[this.selectedIndex].dataset.cost;
 
             document.getElementById('bus_no').value = busNo;
-            document.getElementById('bookAmount').value = stepCost;
+            document.getElementById('bookAmount').value = '₱' + stepCost;
         });
     </script>
 </body>

@@ -65,6 +65,7 @@ function getAllBookings($conn) {
     return $bookings;
 }
 
+
 // Function to close the database connection
 function closeConnection($conn) {
     mysqli_close($conn);
