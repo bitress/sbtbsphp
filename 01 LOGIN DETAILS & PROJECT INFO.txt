@@ -1,0 +1,10 @@
+
+
+Database Name: sbtbsphp
+
+
+
+Username: admin
+Password: Password@123
+
+
